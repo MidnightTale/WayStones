@@ -31,12 +31,12 @@ class ReiconWaystoneCommand : CommandExecutor {
         val location = sender.location
         var nearest: WayStoneData? = null
         for (waystone in WayStones.WaystonePosition.positions) {
-            if (waystone.pos.world != location.world.name) {
+            if (waystone.pos.world != location.world!!.name) {
                 continue
             } else if (nearest == null) {
                 nearest = waystone
             } else {
-                if (EndCrystalRightClickListener.distance(waystone.pos, PositionData(location.x, location.y, location.z, location.world.name)) < EndCrystalRightClickListener.distance(nearest.pos, PositionData(location.x, location.y, location.z, location.world.name))) {
+                if (EndCrystalRightClickListener.distance(waystone.pos, PositionData(location.x, location.y, location.z, location.world!!.name)) < EndCrystalRightClickListener.distance(nearest.pos, PositionData(location.x, location.y, location.z, location.world!!.name))) {
                     nearest = waystone
                 }
             }
