@@ -36,7 +36,6 @@ class WayStones : JavaPlugin() {
             }
         }
         endCrystalRightClickListener.playerNearbyHandler()
-        FancyHolograms.enableHolograms()
     }
 
     override fun onDisable() {
